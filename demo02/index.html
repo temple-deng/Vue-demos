@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .sec {
+      margin-bottom: 50px;
+      border-bottom: 1px solid yellowgreen;
+    }
+
+    .active {
+      width: 30px;
+      height: 30px;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="sec">这个 demo 对应于模板语法及之后的内容</div>
+
+  <div id="app" class="sec"> 
+    <div>过滤器</div>
+    <div> {{ message | capitalize }} </div>
+  </div>
+
+  <div id="app-2" class="sec">
+    <div>计算属性</div>
+    <div>原始 message: {{ message }} </div>
+    <div>逆转后的 message: {{ reverseMessage }} </div>
+  </div>
+
+  <div id="app-3" class="sec">
+    <div>Class 对象与数组语法</div>
+    <div :class=" { active: isActive }" class="active"></div>
+  </div>
+
+  <div id="app-4" class="sec">
+    <div>v-for 迭代对象</div>
+    <template v-for="(value, name, index) in object">
+      <span>属性名： {{ name }}</span> - <span>属性值： {{ value }} + {{ index }}</span>
+    </template>
+  </div>
+
+  <div id="app-5" class="sec">
+    <div>单选按钮</div>
+    <p>
+      <input type="radio" value="One" v-model="picked">One
+    </p>
+    <p>
+      <input type="radio" value="Two" v-model="picked"> Two
+    </p>
+    <p>Picked: {{ picked }}</p>
+  </div>
+
+  <div id="app-6" class="sec">
+    <div>绑定 Value</div>
+    <input type="checkbox" v-model="toggle" v-bind:true-value="a" :false-value="b" value="123">hahahaha
+    <p>checkbox value: {{ toggle }}</p>
+  </div>
+
+  <div id="app-7" class="sec">
+    <div>这个是看看 el 和 template 同时出现的话哪个优先级高。</div>
+    <div>这个 el 的内容 {{ message }}</div>
+  </div>
+
+  <div id="app-8" class="sec">
+    <div>Prop 验证</div>
+    <child :prop-a="p1" :prop-b="p2" :prop-c="p3"></child> 
+  </div>
+
+  <div id="app-9" class="sec">
+    <div>自定义事件</div>
+    <p>{{ total }}</p>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+  </div>
+
+  <div id="app-10" class="sec">
+    <div>Slot</div>
+    <app-layout>
+      <h1 slot="header">这是首部的内容</h1>
+
+      <p>这是一段内容</p>
+      <p>这是另一段内容</p>
+
+      <h1 slot="footer">这是尾部的内容</h1>
+
+      <p>这是第三段内容</p>
+    </app-layout>
+  </div>
+
+  <div id="app-11" class="sec">
+    <div>render 函数</div>
+    <child-comp></child-comp>
+  </div>
+
+  <div id="app-12" class="sec">
+    <div>自定义focus 指令</div>
+    <input type="text" v-focus>
+  </div>
+
+  <div id="app-13" class="sec">
+    <div>mixin</div>
+  </div>
+
+  <div id="app-14" class="sec">
+    <div>props 代理</div>
+    <my-child title="props 优先级高"></my-child>
+  </div>
+
+  <div id="app-15" class="sec">
+    <div>v-text</div>
+    <p v-text="message">Hello <span>{{ message }} </span></p>
+    <p v-text="msg"></p>
+  </div>
+  <script src="dist/main.bundle.js"></script>
+</body>
+</html>

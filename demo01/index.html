@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div> 这个 demo 对应于介绍部分的内容。 </div>
+  <div id="app">
+    {{ message }}
+  </div>
+
+  <div id="app-2">
+    <span v-bind:title="message">
+      hahaha!
+    </span>
+  </div>
+
+  <div id="app-3">
+    <p v-if="seen">Now you can see me!</p>
+  </div>
+
+  <div id="app-4">
+    <ul>
+      <li v-for="todo in todos">
+        {{ todo.name }}
+      </li>
+    </ul>
+  </div>
+
+  <div id="app-5">
+    <p> {{ message }} </p>
+    <button v-on:click="reverseMessage">click to reverse the message!</button>
+  </div>
+
+  <div id="app-6">
+    <input type="text" v-model="message" placeholder="input your name" />
+    <div> {{ message }} </div>
+  </div>
+
+  <div id="app-7">
+    <ol>
+      <todo-item v-for="item in todos" v-bind:todo = "item" v-bind:key = "item.id" en="xixi"></todo-item>
+    </ol>
+  </div>
+  <script src="dist/main.bundle.js"></script>
+</body>
+</html>

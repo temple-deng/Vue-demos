@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .sec {
+      margin-bottom: 50px;
+      border-bottom: 1px solid yellowgreen;
+    }
+
+    .active {
+      width: 30px;
+      height: 30px;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div id="vm">
+    <p>Count: {{ count }} </p>
+    <button @click="incre">Increment</button>
+  </div>
+
+  <div id="app-1">
+    <h1>Hello Vue-router</h1>
+    <p>
+      <router-link to="/foo">Go to Foo</router-link>
+      <router-link to="/bar">Go to Bar</router-link>
+    </p>
+
+    <router-view></router-view>
+  </div>
+  <script src="dist/main.bundle.js"></script>
+</body>
+</html>
