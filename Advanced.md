@@ -439,3 +439,7 @@ Vue.config.optionMergeStrategies.myOption = function (toVal, fromVal) {
 
 ![vue](https://cn.vuejs.org/images/vue-component.png)    
 
+
+$E=mc^2$    
+
+$$\sum_{i=1}^n a_i=0$$   
